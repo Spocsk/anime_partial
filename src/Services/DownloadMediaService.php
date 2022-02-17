@@ -27,14 +27,7 @@ class DownloadMediaService
         ];
         $data = json_decode($request->getContent(), true);
         try {
-            $response = $this->client->request(
-                'GET',
-                'https://api.trace.moe/search?url=' . $data["videoUrl"]
-            );
-            $content = $response->getContent();
-            $content = $response->toArray();
-
-            return $this->downloadVideoFromUrl($content["result"][1]["video"]);
+            return $this->downloadVideoFromUrl($data["videoUrl"]);
 
         } catch (\Exception $e) {
             $errorData["exception"] = $e;
