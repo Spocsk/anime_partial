@@ -1,0 +1,11 @@
+.btn {
+    border-radius: 2rem;
+    text-align: center;
+    transition: all 150ms;
+    cursor: pointer;
+}
+
+.btn:hover {
+    transform: scale(1.05);
+    background-color: rgb(133, 25, 245) !important;
+}
