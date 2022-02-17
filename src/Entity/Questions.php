@@ -3,6 +3,7 @@
 namespace App\Entity;
 
 use ApiPlatform\Core\Annotation\ApiResource;
+use App\Controller\QuestionController;
 use App\Repository\QuestionsRepository;
 use Doctrine\ORM\Mapping as ORM;
 use App\Controller\QuestionsController;
@@ -10,6 +11,11 @@ use App\Controller\QuestionsController;
 #[ORM\Entity(repositoryClass: QuestionsRepository::class)]
 #[ApiResource(collectionOperations: [
     'get',
+    'get_some_question' => [
+        'method' => 'POST',
+        'path' => '/some/questions',
+        'controller' => QuestionController::class
+    ],
     'post' => [
         'method' => 'POST',
         'path' => '/questions',
