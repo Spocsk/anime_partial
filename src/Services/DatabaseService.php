@@ -34,7 +34,7 @@ class DatabaseService
             $data["title"],
             $data["answers"],
             $data["defaultAnswer"],
-            '/media/' . $data["videoUrl"]
+            $data["videoUrl"]
         );
 
         try {
